@@ -28,6 +28,7 @@ struct MatrixOverviewView: View {
                         }
                     }
                     .onTapGesture {
+                        Haptic.feedback(.soft)
                         selectedMatrix = viewModel.newSelectedMatrix(selectedMatrix, index: index)
                     }
                 }

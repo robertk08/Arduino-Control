@@ -17,7 +17,7 @@ class MatrixOverviewViewModel: ObservableObject {
         var selectedMatrix = selectedMatrix
         selectedMatrix = storage.matrixes[index]
         selectedMatrix.index = index
-        let command = ControlCommand(device: "Matrix", matrixValues: selectedMatrix.values)
+        let command = ControlCommand(device: "Matrix", action: "changeAll", matrixValues: selectedMatrix.values)
         ConnectionService.sendRequest(command: command, arduinoIP: arduinoIP)
         Haptic.feedback(.selection)
         return selectedMatrix

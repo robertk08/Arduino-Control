@@ -12,5 +12,5 @@ struct Animation: Identifiable, Codable, Equatable {
     var name: String
     var delay: Double
     var repeating: Bool
-    var values: [Matrix]
+    var matrixes: [Matrix]
 }

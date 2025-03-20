@@ -15,8 +15,8 @@ class MatrixControlViewModel: ObservableObject {
     
     func updateSelectedMatrix() {
         if sendCommandTimer == nil {
-            sendCommandTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
-                let command = ControlCommand(device: "Matrix", matrixValues: self.selectedMatrix.values)
+            sendCommandTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
+                let command = ControlCommand(device: "Matrix", action: "changeAll", matrixValues: self.selectedMatrix.values)
                 ConnectionService.sendRequest(command: command, arduinoIP: self.arduinoIP)
                 self.sendCommandTimer = nil
             }
